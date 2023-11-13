@@ -9,7 +9,7 @@ public class WebPage {
     private Map<String, SelenideElement> elementsMap = new HashMap<>();
 
     public SelenideElement getElement(String name) {
-        return (SelenideElement) elementsMap.get(name);
+        return elementsMap.get(name);
     }
 
     public void addElement(String name, SelenideElement element){

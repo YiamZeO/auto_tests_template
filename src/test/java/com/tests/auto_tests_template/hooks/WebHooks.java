@@ -13,7 +13,7 @@ public class WebHooks {
     public void setup() {
         Configuration.browserSize = "1920x1080";
         Configuration.browser = "edge";
-        Configuration.headless = true;
+        Configuration.headless = false;
         // Fix the issue https://github.com/SeleniumHQ/selenium/issues/11750
         Configuration.browserCapabilities = new EdgeOptions().addArguments("--remote-allow-origins=*");
         SelenideLogger.addListener("allure", new AllureSelenide());

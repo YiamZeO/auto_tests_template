@@ -14,15 +14,17 @@
         <maven.compiler.target>20</maven.compiler.target>
         <maven.compiler.source>20</maven.compiler.source>
         <aspectj.version>1.9.19</aspectj.version>
-        <allure.version>2.13.6</allure.version>
+        <allure.version>2.24.0</allure.version>
+        <cucumber.version>7.14.0</cucumber.version>
+        <selenide.version>6.19.1</selenide.version>
     </properties>
 
     <dependencies>
-        <!-- https://mvnrepository.com/artifact/com.codeborne/selenide-testng -->
+        <!-- https://mvnrepository.com/artifact/com.codeborne/selenide -->
         <dependency>
             <groupId>com.codeborne</groupId>
-            <artifactId>selenide-testng</artifactId>
-            <version>6.19.1</version>
+            <artifactId>selenide</artifactId>
+            <version>${selenide.version}</version>
         </dependency>
         <dependency>
             <groupId>io.qameta.allure</groupId>
@@ -46,30 +48,17 @@
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-java</artifactId>
-            <version>5.7.0</version>
+            <version>${cucumber.version}</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-testng -->
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-testng</artifactId>
-            <version>5.7.0</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/org.testng/testng -->
-        <dependency>
-            <groupId>org.testng</groupId>
-            <artifactId>testng</artifactId>
-            <version>7.7.1</version>
-            <scope>test</scope>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-testng -->
-        <dependency>
-            <groupId>io.qameta.allure</groupId>
-            <artifactId>allure-testng</artifactId>
-            <version>2.13.6</version>
+            <version>${cucumber.version}</version>
         </dependency>
         <dependency>
             <groupId>io.qameta.allure</groupId>
-            <artifactId>allure-cucumber5-jvm</artifactId>
+            <artifactId>allure-cucumber7-jvm</artifactId>
             <version>${allure.version}</version>
         </dependency>
     </dependencies>
@@ -80,7 +69,6 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.22.2</version>
                 <configuration>
-                    <testFailureIgnore>true</testFailureIgnore>
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                     </argLine>

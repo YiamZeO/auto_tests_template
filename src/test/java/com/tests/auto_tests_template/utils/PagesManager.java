@@ -14,6 +14,16 @@ public class PagesManager {
     private String pagesPackageName;
     private Map<String, WebPage> pagesMap = new HashMap<>();
 
+    private WebPage currentPage;
+
+    public WebPage getCurrentPage() {
+        return currentPage;
+    }
+
+    public void setCurrentPage(WebPage currentPage) {
+        this.currentPage = currentPage;
+    }
+
     public WebPage getPage(String name){
         return pagesMap.get(name);
     }

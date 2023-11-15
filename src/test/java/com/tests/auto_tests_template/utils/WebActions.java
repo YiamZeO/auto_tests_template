@@ -64,7 +64,7 @@ public class WebActions {
 
     public static void elementTextNotEqualsExpectedText(SelenideElement element, String expectedText,
                                                         Long timeoutSeconds) {
-        element.shouldNotBe(Condition.not(Condition.exactTextCaseSensitive(expectedText)),
+        element.shouldNotBe(Condition.exactTextCaseSensitive(expectedText),
                 Duration.ofSeconds(timeoutSeconds));
     }
 

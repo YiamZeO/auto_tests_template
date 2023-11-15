@@ -72,12 +72,12 @@ public class WebElementsSteps {
         WebActions.textNotVisibleOnPage(text, timeOut);
     }
 
-    @Если("Подождать появления текста {string} в течении {long} секунд")
+    @Если("Подождать появления текста {string} в течение {long} секунд")
     public void waitTextVisibleOnThePage(String text, Long seconds) {
         WebActions.textVisibleOnPage(text, seconds);
     }
 
-    @Если("Подождать исчезновения текста {string} в течении {long} секунд")
+    @Если("Подождать исчезновения текста {string} в течение {long} секунд")
     public void waitTextNotVisibleOnPage(String text, Long seconds) {
         WebActions.textNotVisibleOnPage(text, seconds);
     }

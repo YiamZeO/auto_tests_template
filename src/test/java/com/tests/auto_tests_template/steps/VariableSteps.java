@@ -19,7 +19,8 @@ public class VariableSteps {
         if (!variableManager.getVariableValue(firstElement)
                 .equals(variableManager.getVariableValue(secondElement)))
         {
-            throw new RuntimeException("Элементы " + firstElement + " и " + secondElement + " не равны");
+            throw new RuntimeException("[Ошибка] Элементы \"" + firstElement + "\" и \"" + secondElement + "\" не равны: "
+                    + variableManager.getVariableValue(firstElement) + " != " + variableManager.getVariableValue(secondElement));
         }
 
     }
@@ -29,7 +30,8 @@ public class VariableSteps {
         if (variableManager.getVariableValue(firstElement)
                 .equals(variableManager.getVariableValue(secondElement)))
         {
-            throw new RuntimeException("Элементы " + firstElement + " и " + secondElement + " равны");
+            throw new RuntimeException("[Ошибка] Элементы \"" + firstElement + "\" и \"" + secondElement + "\" равны: "
+                    + variableManager.getVariableValue(firstElement) + " == " + variableManager.getVariableValue(secondElement));
         }
     }
 }

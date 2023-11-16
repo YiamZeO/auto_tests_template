@@ -6,8 +6,8 @@ import java.util.Map;
 public class VariableManager {
     private final Map<String, Object> variableMap = new HashMap<>();
 
-    public Object getVariableValue(String name) {
-        return variableMap.get(name);
+    public <T> T getVariableValue(String name) {
+        return (T) variableMap.get(name);
     }
 
     public void addVariableValue(String name, Object value) {

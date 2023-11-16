@@ -20,7 +20,7 @@ public class WebHooks {
         Configuration.browserCapabilities = new EdgeOptions().addArguments("--remote-allow-origins=*");
         SelenideLogger.addListener("allure", new AllureSelenide());
 
-        ThreadContextHolder.put("PagesManager",
+        ThreadContextHolder.putValue("PagesManager",
                 new PagesManager("com.tests.auto_tests_template.pages"));
         System.out.println("Установленные переменные контекста: ");
         System.out.println(ThreadContextHolder.asMap());

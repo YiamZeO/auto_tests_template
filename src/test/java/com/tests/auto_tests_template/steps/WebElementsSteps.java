@@ -47,6 +47,12 @@ public class WebElementsSteps {
         WebActions.setStringOnElement(pagesManager.getCurrentPage().getElement(element), value);
     }
 
+    @Если("Ввести в поле {string} значение переменной {string}")
+    public void setVariableOnElement(String element, String value) {
+        WebActions.setStringOnElement(pagesManager.getCurrentPage().getElement(element),
+                ThreadContextHolder.getValue(value));
+    }
+
     @Если("Очистить поле {string}")
     public void clearFiled(String element) {
         pagesManager.getCurrentPage().getElement(element).clear();

@@ -19,7 +19,7 @@ public class ThreadContextHolder {
         return getThread();
     }
 
-    public static void put(String key, Object value) {
+    public static void putValue(String key, Object value) {
         getThread().put(key, value);
     }
 

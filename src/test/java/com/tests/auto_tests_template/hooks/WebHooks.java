@@ -8,16 +8,18 @@ import com.tests.auto_tests_template.utils.ThreadContextHolder;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.qameta.allure.selenide.AllureSelenide;
-import org.openqa.selenium.edge.EdgeOptions;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 public class WebHooks {
     @Before
     public void setup() {
         Configuration.browserSize = "1920x1080";
-        Configuration.browser = "edge";
+        Configuration.browser = "chrome";
         Configuration.headless = false;
         // Fix the issue https://github.com/SeleniumHQ/selenium/issues/11750
-        Configuration.browserCapabilities = new EdgeOptions().addArguments("--remote-allow-origins=*");
+        Configuration.browserCapabilities = new ChromeOptions().addArguments("--remote-allow-origins=*");
+        // Without this it will always try to open https
+        Configuration.browserCapabilities.setCapability("acceptInsecureCerts", false);
         SelenideLogger.addListener("allure", new AllureSelenide());
 
         ThreadContextHolder.putValue("PagesManager",

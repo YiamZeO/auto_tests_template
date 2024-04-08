@@ -16,6 +16,8 @@ public class WebHooks {
         Configuration.browserSize = "1920x1080";
         Configuration.browser = "chrome";
         Configuration.headless = false;
+        Configuration.pageLoadTimeout = 180000;
+        Configuration.timeout = 180000;
         // Fix the issue https://github.com/SeleniumHQ/selenium/issues/11750
         Configuration.browserCapabilities = new ChromeOptions().addArguments("--remote-allow-origins=*");
         // Without this it will always try to open https
